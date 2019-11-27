@@ -12,15 +12,15 @@
 <body>
 
 <header>
-  <dic class="container">
+  <div class="container">
     <?php
       $args = array(
-      
-      )
-      wp_nav_menu( $args)
+        'theme_location' => 'header-menu';
+      );
+      wp_nav_menu( $args );
      ?>
   </div>
 
 </header>
 
-</html>
+

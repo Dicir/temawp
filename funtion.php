@@ -5,7 +5,7 @@ add_theme_suport('post-thumbnails');
 function cadastrando_post_type_imoveis() {
   $nomeSingular = 'Imóvel';
   $nomePlural = 'Imóveis';
-  $description = "Imóveis da imobiliária Malura'
+  $description = 'Imóveis da imobiliária Malura'
   
   $labels = array(
     'name' => $nomePlural,
@@ -24,7 +24,21 @@ function cadastrando_post_type_imoveis() {
      'lalels' => $labels,
      'public' => true,
      'description' => $description,
-     'menu_icon => 'dashicons-admin-home',
+     'menu_icon' => 'dashicons-admin-home',
      'supports' => $supports
    );
+
+   register_post_type( 'imovel', $args );
+
+}
    
+add_action( 'init', 'cadastrando_post_type_imoveis');
+
+function registrar_menu_navegação(){
+  register_nav_menu('header-menu', 'main-menu');
+}
+
+add_action('init', 'registrar_menu_navegação');
+
+
+?>
